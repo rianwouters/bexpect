@@ -1,0 +1,35 @@
+
+function equal {
+  [[ $2 == $1 ]]
+}
+
+function match {
+  [[ `expr $2 : $1` != 0 ]]
+}
+
+function exist {
+  [[ -e $1 ]]
+}
+
+function be_empty {
+ [[ ! -s $1 ]]
+}
+
+function expect {
+  actual=$1
+  shift
+
+  not=0
+  if [[ $1 == not ]]; then
+    not=1
+    shift
+  fi
+
+  shift # 'to'
+
+  set +e # bats exits on non-zero command status
+  "$@" "$actual"
+  result=$?
+  set -e
+  [[ $result == $not ]]
+}

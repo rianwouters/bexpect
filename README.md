@@ -1,5 +1,5 @@
 # bexpect
-Bash expection library inspired by rspec expections
+Bash expectation library inspired by rspec expections
 
 ## How to install
 Just copy lib/expectations into the directory containing your tests

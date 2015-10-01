@@ -9,7 +9,7 @@ source $BATS_TEST_DIRNAME/../lib/expectations
   failed=$[$(printf "$output\nnot ok"|grep -c "^not ok")-1]
   expect "$failed" to equal 0
 
-  passed=$[$(printf "$output\nok\n"|grep -c "^ok")-1]
+  passed=$[$(printf "$output\nok"|grep -c "^ok")-1]
   expect "$passed" to equal "$tests"
 }
 
@@ -20,6 +20,6 @@ source $BATS_TEST_DIRNAME/../lib/expectations
   failed=$[$(printf "$output\nnot ok"|grep -c "^not ok")-1]
   expect "$failed" to equal "$tests"
 
-  passed=$[$(printf "$output\nok\n"|grep -c "^ok")-1]
+  passed=$[$(printf "$output\nok"|grep -c "^ok")-1]
   expect "$passed" to equal 0
 }

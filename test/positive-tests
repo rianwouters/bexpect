@@ -1,0 +1,42 @@
+# expect all these tests to pass
+
+source $BATS_TEST_DIRNAME/../lib/expectations
+
+setup() {
+  cd $BATS_TMPDIR
+}
+
+teardown() {
+  if [ -e $BATS_TMPDIR/foo ]; then
+    rm -fR $BATS_TMPDIR/foo
+  fi
+}
+
+@test 'equality for integers' {
+   expect 0 to equal 0
+   expect 0 not to equal 1
+}
+
+@test 'equality for strings' {
+   expect 'Hello' to equal 'Hello'
+   expect 'Hello' not to equal 'World'
+}
+
+@test 'matching' {
+   expect 'Hello' to match 'Hello*'
+   expect 'Hello' to match 'H*'
+   expect 'Hello' not to match 'Helloworld*'
+}
+
+@test 'file existence' {
+  touch foo
+  expect 'foo' to exist
+  expect 'bar' not to exist
+}
+
+@test 'empty file' {
+  touch foo
+  expect 'foo' to be_empty
+  echo 'bar' >> foo
+  expect 'foo' not to be_empty
+}

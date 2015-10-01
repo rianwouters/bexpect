@@ -8,7 +8,7 @@ Just copy lib/expectations into the directory containing your tests
 The library can work with many bash test frameworks but only tested with
 [BATS](https://github.com/sstephenson/bats)
 
-Just put ```source BATS_TEST_DIRNAME/expectations``` in your test file.
+Just put ```source $BATS_TEST_DIRNAME/expectations``` in your test file.
 
 ## Examples
 The examples below are sample BATS tests:

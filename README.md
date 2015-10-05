@@ -47,7 +47,7 @@ Add you own matchers as follows.
 ```
 function matcher {
   # the last agument is the actual value to match
-  # all other orgguments can be used to match
+  # all other arguments can be used to match
   #
   # successfull match on and only on exit code 0
 }

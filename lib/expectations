@@ -4,7 +4,7 @@ function equal {
 }
 
 function match {
-  [[ `expr $2 : $1` != 0 ]]
+  [[ `expr $2 : $1` == ${#2} ]]
 }
 
 function exist {

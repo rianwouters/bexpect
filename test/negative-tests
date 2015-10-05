@@ -32,6 +32,10 @@ teardown() {
    expect 'Hello' to match 'W.*'
 }
 
+@test 'only partially matching' {
+   expect 'Helloworld' to match 'Hello'
+}
+
 @test 'non-matching' {
    expect 'Hello' not to match 'Hello.*'
 }

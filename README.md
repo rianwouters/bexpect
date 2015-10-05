@@ -40,17 +40,21 @@ The examples below are sample BATS tests:
   expect 'bar' not to be_empty
 }
 ```
-## Matcher API
-'''
+## Custom matcher API
+
+Add you own matchers as follows.
+
+```
 function matcher {
   # the last agument is the actual value to match
   # all other orgguments can be used to match
   #
   # successfull match on and only on exit code 0
 }
+```
 
 for example:
-'''
+```
 function be_liked {
   [[ `expr "$2" : "I like .* $1"` == ${#2} ]]
 }
@@ -62,4 +66,4 @@ function foo {
 @test 'matcher API example' {
   expect "$(foo 'bar')" to be_liked 'very much'
 }
-'''
+```

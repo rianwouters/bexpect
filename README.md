@@ -40,3 +40,26 @@ The examples below are sample BATS tests:
   expect 'bar' not to be_empty
 }
 ```
+## Matcher API
+'''
+function matcher {
+  # the last agument is the actual value to match
+  # all other orgguments can be used to match
+  #
+  # successfull match on and only on exit code 0
+}
+
+for example:
+'''
+function be_liked {
+  [[ `expr "$2" : "I like .* $1"` == ${#2} ]]
+}
+
+function foo {
+  echo "I like $1 very much"
+}
+
+@test 'matcher API example' {
+  expect "$(foo 'bar')" to be_liked 'very much'
+}
+'''

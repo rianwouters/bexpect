@@ -40,3 +40,15 @@ teardown() {
   echo 'bar' >> foo
   expect 'foo' not to be_empty
 }
+
+function be_liked {
+  [[ `expr "$2" : "I like .* $1"` == ${#2} ]]
+}
+
+function foo {
+  echo "I like $1 very much"
+}
+
+@test 'matcher API' {
+  expect "$(foo 'bar')" to be_liked 'very much'
+}

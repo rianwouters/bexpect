@@ -29,11 +29,11 @@ teardown() {
 }
 
 @test 'matching' {
-   expect 'Hello' to match 'W*'
+   expect 'Hello' to match 'W.*'
 }
 
 @test 'non-matching' {
-   expect 'Hello' not to match 'Hello*'
+   expect 'Hello' not to match 'Hello.*'
 }
 
 @test 'file existence' {

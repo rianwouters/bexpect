@@ -23,8 +23,8 @@ The examples below are sample BATS tests:
 
 @test 'matching' {
    run "echo -n 'Hello World'"
-   expect $output to equal 'Hello*'
-   expect $output not to equal 'World*'
+   expect $output to equal 'Hello.*'
+   expect $output not to equal 'World.*'
 }
 
 @test 'file existence' {

@@ -23,9 +23,9 @@ teardown() {
 }
 
 @test 'matching' {
-   expect 'Hello' to match 'Hello*'
-   expect 'Hello' to match 'H*'
-   expect 'Hello' not to match 'Helloworld*'
+   expect 'Hello' to match 'Hello.*'
+   expect 'Hello' to match 'H.*'
+   expect 'Hello' not to match 'Helloworld.*'
 }
 
 @test 'file existence' {

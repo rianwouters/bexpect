@@ -78,3 +78,11 @@ function foo {
 @test 'be_within, larger' {
   expect 28.1 to be_within 0.5 of 27.5
 }
+
+@test 'not to end_with' {
+  expect 'this string' not to end_with 'string'
+}
+
+@test 'end_with' {
+  expect 'this string' to end_with 'stringy'
+}

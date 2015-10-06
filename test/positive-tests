@@ -57,3 +57,8 @@ function foo {
   expect 27.5 to be_within 0.5 of 27.9
   expect 27.9 to be_within 0.5 of 27.5
 }
+
+@test 'end_with' {
+  expect 'this string' to end_with "string"
+  expect 'this string' not to end_with "stringy"
+}

@@ -19,6 +19,10 @@ function be_within {
   return $(echo "d=$4-$3; !(-$1 <= d && d <= $1)" | bc)
 }
 
+function end_with {
+  [[ ${2: -${#1}} == $1 ]]
+}
+
 function expect {
   actual=$1
   shift

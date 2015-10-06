@@ -39,10 +39,16 @@ The examples below are sample BATS tests:
   expect 'foo' to be_empty
   expect 'bar' not to be_empty
 }
-```
+
 @test 'be_within' {
   expect 27.5 to be_within 0.5 of 27.9
 }
+
+@test 'end_with' {
+  expect 'this string' to end_with "string"
+  expect 'this string' not to end_with "stringy"
+}
+```
 
 ## Custom matcher API
 

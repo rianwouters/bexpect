@@ -15,6 +15,10 @@ function be_empty {
  [[ ! -s $1 ]]
 }
 
+function be_within {
+  return $(echo "d=$4-$3; !(-$1 <= d && d <= $1)" | bc)
+}
+
 function expect {
   actual=$1
   shift

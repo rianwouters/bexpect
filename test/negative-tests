@@ -71,3 +71,10 @@ function foo {
 @test 'matcher API' {
   expect "$(foo 'bar')" to be_liked 'very'
 }
+
+@test 'be_within, smaller' {
+  expect 27.5 to be_within 0.5 of 28.1
+}
+@test 'be_within, larger' {
+  expect 28.1 to be_within 0.5 of 27.5
+}

@@ -40,6 +40,10 @@ The examples below are sample BATS tests:
   expect 'bar' not to be_empty
 }
 ```
+@test 'be_within' {
+  expect 27.5 to be_within 0.5 of 27.9
+}
+
 ## Custom matcher API
 
 Add you own matchers as follows.

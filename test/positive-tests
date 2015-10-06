@@ -52,3 +52,8 @@ function foo {
 @test 'matcher API' {
   expect "$(foo 'bar')" to be_liked 'very much'
 }
+
+@test 'be_within' {
+  expect 27.5 to be_within 0.5 of 27.9
+  expect 27.9 to be_within 0.5 of 27.5
+}

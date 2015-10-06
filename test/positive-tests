@@ -62,3 +62,16 @@ function foo {
   expect 'this string' to end_with "string"
   expect 'this string' not to end_with "stringy"
 }
+
+@test 'contains_exactly'  {
+  ARR1=(v1 v2 v3)
+  expect ARR1[@] to contain_exactly ARR1[@]
+
+  ARR2=(v3 v2 v1)
+  expect ARR1[@] to contain_exactly ARR2[@]
+  expect ARR2[@] to contain_exactly ARR1[@]
+
+  ARR3=(v3 v2 v1 v3)
+  expect ARR1[@] to contain_exactly ARR3[@]
+  expect ARR3[@] to contain_exactly ARR1[@]
+}

@@ -23,6 +23,17 @@ function end_with {
   [[ ${2: -${#1}} == $1 ]]
 }
 
+function sortuniq {
+  declare -a a=("${!1}")
+  IFS=$'\n'
+  s=$(uniq <<<"$(sort <<< "${a[*]}")")
+  echo ${s[@]}
+}
+
+function contain_exactly {
+  [[ $(sortuniq $1) == $(sortuniq $2) ]]
+}
+
 function expect {
   actual=$1
   shift

@@ -48,6 +48,13 @@ The examples below are sample BATS tests:
   expect 'this string' to end_with "string"
   expect 'this string' not to end_with "stringy"
 }
+
+@test 'contains_exactly'  {
+  ARR1=(v1 v2 v3)
+  ARR2=(v3 v2 v1 v3)
+  expect ARR1[@] to contain_exactly ARR2[@]
+  expect ARR2[@] to contain_exactly ARR1[@]
+}
 ```
 
 ## Custom matcher API

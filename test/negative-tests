@@ -86,3 +86,10 @@ function foo {
 @test 'end_with' {
   expect 'this string' to end_with 'stringy'
 }
+
+@test 'contains_exactly'  {
+  ARR1=(v1 v2 v3)
+  ARR2=(v1 v2 v3 v4)
+  expect ARR1[@] to contain_exactly ARR2[@]
+}
+
